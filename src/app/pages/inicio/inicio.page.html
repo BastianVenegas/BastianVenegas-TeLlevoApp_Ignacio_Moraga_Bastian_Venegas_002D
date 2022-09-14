@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar style="height: 110px">
+    <ion-img style="width: 150px; height: 150px;" slot="end" src="assets/duoc.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="white">Te LLevo!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+  <img src="assets/duocNoche.jpg" style="opacity: 55%;">
+  </ion-card>
+<!--  <ion-list>
+    <ion-item *ngFor="let c of componentes" [routerLink]="c.redirecTo" detail="true">
+      <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+      {{ c.name }}
+    </ion-item>
+  </ion-list>
+
+
+  <ion-button routerLink="/alert">
+    Alert
+  </ion-button>
+  <ion-button routerLink="/action-sheet">
+    Action-Sheet
+  </ion-button>-->
+  
+</ion-content>

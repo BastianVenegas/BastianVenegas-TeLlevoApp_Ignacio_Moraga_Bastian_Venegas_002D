@@ -1,0 +1,43 @@
+<ion-toolbar>
+  <ion-buttons slot="start" color="primary">
+  <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+  </ion-buttons>
+  <ion-title style="color: white">Login</ion-title>
+  </ion-toolbar>
+  <ion-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input type="text" placeholder="Digite un nombre" [(ngModel)]="nombre"
+        required>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+
+      <ion-item>
+        <ion-label>Email: </ion-label>
+        <ion-input type="email" placeholder="Email"
+                    name="email" [(ngModel)]="usuario.email"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password: </ion-label>
+        <ion-input type="password" placeholder="Contraseña"
+                   name="password" [(ngModel)]="usuario.password"
+                   required>
+        </ion-input>
+      </ion-item>
+
+      <ion-button [disabled] ="formulario.invalid"
+                  type="submit" expand="block">
+              Click me
+                </ion-button>
+    </form>
+  </ion-content>
