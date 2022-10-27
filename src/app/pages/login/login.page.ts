@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { DatosService, Usuario } from '../../services/datos.service';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -7,20 +16,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  nombre: string='';
+  formularioLogin : FormGroup;
+  usuarios : Usuario[] = [];
 
-  usuario = {
-    email:'',
-    password:''
-  }
-
-  constructor() { }
+  constructor( private alertController: AlertController,
+               private navController: NavController,
+               private datosService: DatosService,
+               private fb: FormBuilder) {
+                this.formularioLogin = this.fb.group({
+                  'correo': new FormControl("", Validators.required),
+                  'contraseña': new FormControl("", Validators.required),
+                  })
+                }            
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    console.log('submit');
-    console.log(this.usuario);
+  async Ingresar (){
+    var f = this.formularioLogin.value;
+    var a = 0;
+    this.datosService.getUsuarios().then(datos=>{
+      this.usuarios=datos;
+      if (datos.length==0)
+      {
+          return null;
+      }
+
+      for (let obj of this.usuarios){
+        if (obj.correo == f.correo && obj.contraseña==f.contraseña){
+          a=1;
+          console.log('ingresado');
+          localStorage.setItem('ingresado', 'true');
+          this.navController.navigateRoot('inicio');
+        }
+      }
+      console.log(a);
+      if (a==0){
+        this.alertMsg();
+      }
+    });
   }
+
+  async alertMsg(){
+    const alert = await this.alertController.create({
+      header: 'Error..',
+      message: '¡Los datos ingresados no son correctos!',
+      buttons: ['Aceptar'],
+    });
+    await alert.present();
+    return;
+  }
+
 }

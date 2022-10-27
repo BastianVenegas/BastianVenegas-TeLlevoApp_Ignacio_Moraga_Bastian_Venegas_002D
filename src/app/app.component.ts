@@ -16,6 +16,11 @@ export class AppComponent {
 
   componentes : Componente[] = [
     {
+      icon: 'wifi-outline',
+      name: 'Inicio',
+      redirecTo: '/inicio',
+    },
+    {
       icon: 'information-circle-outline',
       name: 'Quienes Somos',
       redirecTo: '/quienes'
@@ -24,7 +29,22 @@ export class AppComponent {
       icon: 'log-in-outline',
       name: 'Login',
       redirecTo: '/login'
-    }       
+    },
+    {
+      icon: 'log-in-outline',
+      name: 'Registro',
+      redirecTo: '/registro'
+    },  
+    {
+      icon: 'log-in-outline',
+      name: 'Logout',
+      redirecTo: '/logout'
+    },
+    {
+      icon: 'eye-outline',
+      name: 'Noticias',
+      redirecTo:'/noticias',
+    },         
   ];
 }
 
