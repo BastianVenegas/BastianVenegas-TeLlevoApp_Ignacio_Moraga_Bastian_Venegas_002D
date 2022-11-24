@@ -38,6 +38,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/noticias/noticias.module').then( m => m.NoticiasPageModule),
     canActivate: [IngresadoGuard]
   },
+  {
+    path: 'pasajero',
+    loadChildren: () => import('./pages/pasajero/pasajero.module').then( m => m.PasajeroPageModule)
+  },
+  {
+    path: 'conductor',
+    loadChildren: () => import('./pages/conductor/conductor.module').then( m => m.ConductorPageModule)
+  },
 
 ];
 

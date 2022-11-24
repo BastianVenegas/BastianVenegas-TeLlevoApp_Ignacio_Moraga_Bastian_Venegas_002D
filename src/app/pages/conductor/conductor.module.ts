@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LogoutPageRoutingModule } from './logout-routing.module';
+import { ConductorPageRoutingModule } from './conductor-routing.module';
 
-import { LogoutPage } from './logout.page';
+import { ConductorPage } from './conductor.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { LogoutPage } from './logout.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    LogoutPageRoutingModule
+    ConductorPageRoutingModule
   ],
-  declarations: [LogoutPage]
+  declarations: [ConductorPage]
 })
-export class LogoutPageModule {}
+export class ConductorPageModule {}

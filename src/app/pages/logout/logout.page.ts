@@ -8,6 +8,7 @@ FormControl,
 Validators,
 FormBuilder
 } from '@angular/forms';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-logout',

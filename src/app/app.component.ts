@@ -24,17 +24,7 @@ export class AppComponent {
       icon: 'information-circle-outline',
       name: 'Quienes Somos',
       redirecTo: '/quienes'
-    },   
-    {
-      icon: 'log-in-outline',
-      name: 'Login',
-      redirecTo: '/login'
-    },
-    {
-      icon: 'log-in-outline',
-      name: 'Registro',
-      redirecTo: '/registro'
-    },  
+    },    
     {
       icon: 'log-in-outline',
       name: 'Logout',

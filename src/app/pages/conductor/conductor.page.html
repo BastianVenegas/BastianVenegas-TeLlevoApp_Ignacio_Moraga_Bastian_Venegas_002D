@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar style="height: 110px">
+    <ion-img style="width: 150px; height: 150px;" slot="end" src="assets/duoc.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="white">Te LLevo!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>Registro</ion-card-header>
+    <ion-card-content>
+      <form [formGroup] = "formularioRegistro" (keyup.enter)="CrearAuto()">
+        <ion-item>
+          <ion-label position="floating">Modelo</ion-label>        
+          <ion-input type="text" formControlName="modelo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Patente</ion-label>        
+          <ion-input type="text" formControlName="patente"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Capacidad</ion-label>        
+          <ion-input type="text" formControlName="capacidad"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Dirección</ion-label>        
+          <ion-input type="text" formControlName="direccion"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Tarifa</ion-label>        
+          <ion-input type="text" formControlName="tarifa"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button (click)="CrearAuto()" expand="block" fill="outline" shape="round"  routerLink="/inicio">Continuar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

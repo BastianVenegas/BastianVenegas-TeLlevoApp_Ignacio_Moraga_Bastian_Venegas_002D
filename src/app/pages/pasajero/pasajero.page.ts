@@ -1,23 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { DatosService, Usuario } from 'src/app/services/datos.service';
+import { AutoService, Auto } from 'src/app/services/auto.service';
 import { Platform, ToastController, IonList} from '@ionic/angular';
 
-interface Componente{
-  icon: string;
-  name: string;
-  redirecTo: string;
-}
-
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  selector: 'app-pasajero',
+  templateUrl: './pasajero.page.html',
+  styleUrls: ['./pasajero.page.scss'],
 })
-export class InicioPage implements OnInit {
+export class PasajeroPage implements OnInit {
 
-  usuario: Usuario[] = [];
-  constructor(private storageService: DatosService,
+  auto: Auto[] = [];
+  constructor(private storageService: AutoService,
               private menuController: MenuController,
               private plt: Platform, 
               private toastController: ToastController) {
@@ -30,8 +24,8 @@ export class InicioPage implements OnInit {
   }
 
   loadDatos(){
-    this.storageService.getUsuarios().then(usuario=>{
-      this.usuario=usuario;
+    this.storageService.getAutos().then(auto=>{
+      this.auto=auto;
     });
   }
 

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar style="height: 110px">
+    <ion-img style="width: 150px; height: 150px;" slot="end" src="assets/duoc.png"></ion-img>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   <ion-title color="white">Te LLevo!</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+      <ion-card-header *ngFor="let au of auto">
+        <ion-card color="dark">
+        <h3>Modelo: {{au.modelo}}</h3> <h3>Patente: {{au.patente}}</h3> <h3>Capacidad: 
+          {{au.capacidad}}<h3>Direccion: {{au.direccion}}</h3>Tarifa: 
+          {{au.tarifa}}</h3> <ion-button color="danger">Elegir ☝</ion-button>
+      </ion-card>
+  </ion-card-header>
+</ion-content>

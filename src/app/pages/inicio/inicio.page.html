@@ -12,6 +12,17 @@
 
 <ion-content>
   <ion-card>
+    <ion-card-header>
+      <ion-badge> <tr *ngFor="let us of usuario">
+        <td style="font-size: x-large;"> Bienvenid@ {{us.nombre}}!!!</td>
+      </tr></ion-badge>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+  <ion-button [routerLink]="['/pasajero']">Soy un Pasajero</ion-button>
+  <ion-button [routerLink]="['/conductor']">Soy un Conductor</ion-button>
+</ion-card>
+  <ion-card>
   <img src="assets/duocNoche.jpg" style="opacity: 55%;">
   </ion-card>
 <!--  <ion-list>
